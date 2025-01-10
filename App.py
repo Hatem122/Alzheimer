@@ -1,11 +1,11 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import zipfile
+import os
 
 # تحميل النماذج المحفوظة
 log_model = joblib.load("logistic_regression_model.pkl")
-import zipfile
-import os
 
 # تحديد مسار الملف المضغوط
 zip_file = 'random_forest_model.zip'
@@ -18,7 +18,8 @@ with zipfile.ZipFile(zip_file, 'r') as zip_ref:
 # الآن لديك الملف داخل المجلد 'model_folder'
 model_path = os.path.join(extract_folder, 'random_forest_model.pkl')
 
-rf_model = joblib.load("random_forest_model.pkl")
+# تحميل نموذج Random Forest
+rf_model = joblib.load(model_path)
 
 # عنوان التطبيق
 st.title("تنبؤ مرض الزهايمر")
