@@ -5,7 +5,9 @@ import pandas as pd
 # تحميل النماذج المحفوظة
 log_model = joblib.load("logistic_regression_model.pkl")
 import gdown
-gdown.download('https://drive.google.com/uc?id=<1RwHxjBN7KXu8gwkpOtJGrLikRjoahLgb>', 'random_forest_model.pkl', quiet=False)
+file_id = '1RwHxjBN7KXu8gwkpOtJGrLikRjoahLgb'
+gdown.download(f'https://drive.google.com/uc?id={file_id}', 'random_forest_model.pkl', quiet=False)
+
 rf_model = joblib.load("random_forest_model.pkl")
 
 # عنوان التطبيق
