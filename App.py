@@ -4,6 +4,19 @@ import pandas as pd
 
 # تحميل النماذج المحفوظة
 log_model = joblib.load("logistic_regression_model.pkl")
+import zipfile
+import os
+
+# تحديد مسار الملف المضغوط
+zip_file = 'random_forest_model.zip'
+extract_folder = 'model_folder'  # المسار الذي سيتم فك الضغط فيه
+
+# فك الضغط
+with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+    zip_ref.extractall(extract_folder)
+
+# الآن لديك الملف داخل المجلد 'model_folder'
+model_path = os.path.join(extract_folder, 'random_forest_model.pkl')
 
 rf_model = joblib.load("random_forest_model.pkl")
 
