@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 
 # تحميل النماذج المحفوظة
-log_model = joblib.load("logistic_regression_model.pkl")
-rf_model = joblib.load("random_forest_model.pkl")
+log_model = joblib.load("logistic_regression_model.pkl.pkl")
+rf_model = joblib.load("random_forest_model.pkl.pkl")
 
 # عنوان التطبيق
 st.title("تنبؤ مرض الزهايمر")
